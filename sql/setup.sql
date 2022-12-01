@@ -15,15 +15,17 @@ CREATE TABLE
 
 --DROP TABLE users;
 
-INSERT INTO users (name, email, password) VALUES ("test","test@tes.com","123");
+-- INSERT INTO users (name, email, password) VALUES ("test","test@tes.com","123");
 
 CREATE TABLE
     contacts(
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255),
-        phone_number VARCHAR(255)
+        phone_number VARCHAR(255),
+        user_id INT NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES users(id)
     );
 
-INSERT INTO
-    contacts(name, phone_number)
-VALUES ("Wilson", "098765432");
+-- INSERT INTO
+--     contacts(name, phone_number)
+-- VALUES ("Wilson", "098765432");
